@@ -4,6 +4,68 @@
   box-sizing: border-box;
 }
 
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: #fffdfb;
+  border-top: 1px solid #e9e2d9;
+  margin-top: 2rem;
+}
+
+.contact-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: #2e294e;
+  margin-bottom: 1.2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.4rem;
+  background: white;
+  color: #2e294e;
+  text-decoration: none;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(46, 41, 78, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.contact-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(46, 41, 78, 0.1);
+  color: #d4a5a5;
+}
+
+.contact-link.whatsapp:hover {
+  color: #25D366;
+}
+
+.contact-link.email:hover {
+  color: #d44638;
+}
+
+@media (max-width: 500px) {
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: #f8f3ed;

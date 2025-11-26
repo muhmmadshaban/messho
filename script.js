@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     
     list.forEach(p => {
-      const fallback = 'https://via.placeholder.com/320x320/f8f3ed/d4a5a5?text=StichStory';
+      const fallback = 'logo.jpg';
       const card = document.createElement('div');
       card.className = 'product-card';
       card.innerHTML = `
