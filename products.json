@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Floral Cotton Kurta for Women",
+    "price": "₹499",
+    "image": "https://images.meesho.com/images/products/123456789/abcde.jpg",
+    "meeshoUrl": "https://www.meesho.com/floral-kurta/p/12345",
+    "category": "Kurtas"
+  },
+  {
+    "id": 2,
+    "name": "Designer Embroidered Dupatta",
+    "price": "₹349",
+    "image": "https://images.meesho.com/images/products/987654321/fghij.jpg",
+    "meeshoUrl": "https://www.meesho.com/embroidered-dupatta/p/67890",
+    "category": "Dupattas"
+  },
+  {
+    "id": 3,
+    "name": "Silk Blend Saree with Blouse",
+    "price": "₹1,299",
+    "image": "https://images.meesho.com/images/products/112233445/klmno.jpg",
+    "meeshoUrl": "https://www.meesho.com/silk-saree/p/11223",
+    "category": "Sarees"
+  },
+  {
+    "id": 4,
+    "name": "Kids Ethnic Kurta Set",
+    "price": "₹399",
+    "image": "https://images.meesho.com/images/products/556677889/pqrst.jpg",
+    "meeshoUrl": "https://www.meesho.com/kids-kurta/p/44556",
+    "category": "Kids"
+  },
+  {
+    "id": 5,
+    "name": "Handcrafted Juttis",
+    "price": "₹599",
+    "image": "https://images.meesho.com/images/products/998877665/uvwxy.jpg",
+    "meeshoUrl": "https://www.meesho.com/juttis/p/77889",
+    "category": "Footwear"
+  }
+]
