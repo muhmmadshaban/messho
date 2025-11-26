@@ -1,1 +1,16 @@
-scrapper.py
+# Ignore the specific file 'scrapper.py' in the root directory
+/scrapper.py
+
+# Ignore the __pycache__ directory wherever it appears in the project
+__pycache__/
+
+# Alternatively, a more comprehensive Python-specific approach often includes:
+# Compiled python files
+*.pyc
+
+# Operating system generated files (e.g. macOS)
+.DS_Store
+
+# Virtual environment directory (common practice)
+venv/
+.venv/
