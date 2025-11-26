@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'product-card';
       card.innerHTML = `
         <img class="product-image" src="${p.image || fallback}" alt="${p.name}" onerror="this.src='${fallback}'">
+        // In renderProducts(), inside the card.innerHTML:
+<h3 class="product-name">${p.name} <span style="font-size:0.8rem; color:#888;">(${p.variation})</span></h3>
         <div class="product-info">
           <span class="product-category">${p.category || 'Collection'}</span>
           <h3 class="product-name">${p.name}</h3>
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <a href="${p.meeshoUrl || '#'}" target="_blank" class="buy-btn">
             ${p.meeshoUrl ? 'Buy on Meesho' : 'Not Available'}
           </a>
+          
         </div>
       `;
       productsContainer.appendChild(card);
