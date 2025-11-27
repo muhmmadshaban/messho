@@ -1,5 +1,6 @@
 # Ignore the specific file 'scrapper.py' in the root directory
 /scrapper.py
+/run_server.py
 
 # Ignore the __pycache__ directory wherever it appears in the project
 __pycache__/
