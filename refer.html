@@ -5,26 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Refer & Earn – StichStory</title>
   <style>
-    body { font-family: 'Inter', sans-serif; background: #f8f3ed; color: #2e294e; padding: 2rem; max-width: 700px; margin: 0 auto; }
-    h1 { font-family: 'Cormorant Garamond', serif; text-align: center; margin-bottom: 1.5rem; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f3ed;
+      color: #2e294e;
+      padding: 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
     .form-group { margin-bottom: 1.2rem; }
     label { display: block; margin-bottom: 0.4rem; font-weight: 500; }
-    input, textarea { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; }
-    button { background: #d4a5a5; color: white; border: none; padding: 1rem; font-size: 1.1rem; border-radius: 10px; cursor: pointer; width: 100%; font-weight: 600; }
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: inherit;
+    }
+    button {
+      background: #d4a5a5;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+    }
     button:hover { background: #c09090; }
-    .terms { margin: 1.5rem 0; padding: 1.2rem; background: #fffdfb; border-radius: 10px; font-size: 0.95rem; }
+    .terms {
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      background: #fffdfb;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
     .terms h3 { margin-top: 0; }
-    .success, .error { padding: 1rem; margin: 1rem 0; border-radius: 8px; display: none; }
-    .success { background: #d4edda; color: #155724; }
-    .error { background: #f8d7da; color: #721c24; }
+    .alert {
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      display: none;
+    }
+    .alert-success {
+      background: #d4edda;
+      color: #155724;
+    }
+    .alert-error {
+      background: #f8d7da;
+      color: #721c24;
+    }
   </style>
 </head>
 <body>
   <h1>Refer & Earn</h1>
   <p>Earn 10% of every successful order you refer! Just fill in the details below.</p>
 
-  <div class="success" id="successMsg">Thank you! Your referral has been submitted.</div>
-  <div class="error" id="errorMsg">Something went wrong. Please try again.</div>
+  <div class="alert alert-success" id="successMsg">
+    Thank you! Your referral has been submitted.
+  </div>
+  <div class="alert alert-error" id="errorMsg">
+    Submission failed. Please check your inputs and try again.
+  </div>
 
   <form id="referralForm">
     <div class="form-group">
@@ -37,7 +85,7 @@
     </div>
     <div class="form-group">
       <label>Your Phone*</label>
-      <input type="tel" name="referrerPhone" required>
+      <input type="tel" name="referrerPhone" required pattern="[0-9]{10,15}">
     </div>
 
     <div class="form-group">
@@ -46,10 +94,10 @@
     </div>
     <div class="form-group">
       <label>Referred Friend’s Phone*</label>
-      <input type="tel" name="refereePhone" required>
+      <input type="tel" name="refereePhone" required pattern="[0-9]{10,15}">
     </div>
     <div class="form-group">
-      <label>Referred Friend’s Email (if known)</label>
+      <label>Referred Friend’s Email (optional)</label>
       <input type="email" name="refereeEmail">
     </div>
 
@@ -59,7 +107,7 @@
     </div>
     <div class="form-group">
       <label>Order Screenshot Link*</label>
-      <input type="url" name="screenshotLink" placeholder="Google Drive, Dropbox, or Imgur public link" required>
+      <input type="url" name="screenshotLink" placeholder="Public link (Google Drive, etc.)" required>
     </div>
     <div class="form-group">
       <label>Additional Notes (Optional)</label>
@@ -68,7 +116,8 @@
 
     <div class="form-group">
       <label>
-        <input type="checkbox" name="agreeTerms" required> I agree to the <a href="#terms" style="color:#d4a5a5">Referral Terms & Conditions</a>
+        <input type="checkbox" name="agreeTerms" required> 
+        I agree to the <a href="#terms" style="color:#d4a5a5">Referral Terms</a>
       </label>
     </div>
 
@@ -76,43 +125,43 @@
   </form>
 
   <div class="terms" id="terms">
-    <h3>Referral Program Terms & Conditions</h3>
+    <h3>Referral Terms</h3>
     <ul>
-      <li>You earn 10% of the final order value (excluding shipping) for every successful referral.</li>
-      <li>Referee must be a first-time buyer from StichStory via Meesho.</li>
-      <li>Order must be completed and past the return/cancellation window (usually 7–10 days).</li>
-      <li>Payouts are processed weekly via UPI or bank transfer.</li>
-      <li>Submitting fake/fraudulent referrals will disqualify you permanently.</li>
-      <li>StichStory reserves the right to modify or discontinue this program anytime.</li>
+      <li>Earn 10% of order value (excl. shipping)</li>
+      <li>Referee must be a first-time buyer</li>
+      <li>Order must clear return window (7–10 days)</li>
+      <li>Payout via UPI/bank weekly</li>
+      <li>Fraud = disqualification</li>
     </ul>
   </div>
 
   <script>
-   document.getElementById('referralForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
+    document.getElementById('referralForm').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbz49XnSQHfjPYEAtNIaWtQqaQkY3giFNtPuyfNPRqWfSeHnilm2s-bNQuCCbtfoScz9Tw/exec';
+      // ✅ REPLACE THIS URL WITH YOUR NEW DEPLOYMENT URL FROM APPS SCRIPT
+      const scriptURL = 'https://script.google.com/macros/s/AKfycby7xeoyr2jN-xzpZAzzayDJzDEpDWpaNFsHZz5-GEjIXXJeZrKzvEL-9-z2R9Ul1ic8/exec';
 
-  try {
-    // Send as form-urlencoded (no preflight!)
-    const response = await fetch(scriptURL, {
-      method: 'POST',
-      body: formData  // ← Just pass FormData directly (no JSON!)
-    });
+      const form = e.target;
+      const iframe = document.createElement('iframe');
+      iframe.name = 'refFrame';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
 
-    if (response.ok) {
+      form.target = 'refFrame';
+      form.action = scriptURL;
+      form.method = 'POST';
+      form.submit();
+
+      // Show success (assume success; GAS returns "Success" on OK)
       document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('errorMsg').style.display = 'none';
       form.reset();
-    } else {
-      document.getElementById('errorMsg').textContent = 'Submission failed. Please try again.';
-      document.getElementById('errorMsg').style.display = 'block';
-    }
-  } catch (err) {
-    console.error(err);
-    document.getElementById('errorMsg').style.display = 'block';
-  }
-});</script>
+
+      setTimeout(() => {
+        if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
